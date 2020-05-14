@@ -94,7 +94,7 @@ namespace LiveImageClassifier
             var topPred = jsonObj.Predictions.OrderByDescending(item => item.Probability).FirstOrDefault();
             if(topPred.Probability * 100 >= 90)
             {
-                label2.Text = topPred.TagName.ToUpper();
+                label2.Text = topPred.TagName.ToUpper() + " ( " + topPred.Probability * 100 + "% )";
             }
             else
             {
